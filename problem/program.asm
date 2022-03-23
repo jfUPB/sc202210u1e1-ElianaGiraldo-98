@@ -1,6 +1,63 @@
-// COLOCO AQUÍ TU NOMBRE COMPLETO
-// COLOCA AQUÍ TU ID
-// COLOCA AQUÍ TU CORREO ELECTRÓNICO
-(START)
-    @START
-    0;JMP
+// COLOCO AQUÍ TU NOMBRE COMPLETO Eliana Giraldo Duque
+// COLOCA AQUÍ TU ID 00321721
+// COLOCA AQUÍ TU CORREO ELECTRÓNICO eliana.giraldod@upb.edu.co
+
+(KEYF)
+@KBD
+D=M
+@70 // "F"
+D=D-A
+@LOOPBLACK
+D;JEQ
+@KEYF
+0;JMP
+
+(LOOPBLACK)
+@i
+M=0
+(BLACK)
+@i
+D=M
+@8192
+D=D-A
+@KEYC
+D;JEQ
+@16384
+D=A
+@i
+A=D+M
+M=-1 
+@i
+M=M+1 
+@BLACK
+0;JMP
+
+(KEYC)
+@KBD
+D=M
+@67 // "C"
+D=D-A
+@WHITE 
+D;JEQ
+@KEYC
+0;JMP
+
+(WHITE)
+@i
+M=0
+(LOOPWHITE)
+@i
+D=M
+@8192
+D=D-A
+@KEYF
+D;JEQ
+@16384
+D=A
+@i
+A=D+M
+M=0 
+@i
+M=M+1 
+@LOOPWHITE
+0;JMP
